@@ -92,3 +92,16 @@ button:hover {
 .gift:hover {
     transform: scale(1.2);
 }
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .gift-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+}
