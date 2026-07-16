@@ -23,7 +23,7 @@ body{
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.8;
   min-height:100vh;
   overflow-x:hidden;
   -webkit-font-smoothing: antialiased;
