@@ -227,4 +227,113 @@ h2.title{
   .gift-grid{ gap: 20px 14px; }
   .gift-box{ width:70px; height:62px; }
   .letter-card{ padding: 32px 24px; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #a8c0ff; /* The soft blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 350px;
+    min-height: 450px;
+}
+
+.screen {
+    display: none;
+}
+
+.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Passcode Layout */
+.passcode-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50%;
+    background: #f0f0f0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #e0e0e0;
+}
+
+.btn-action {
+    border-radius: 12px;
+    background: #4a90e2;
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+}
+
+.btn-no {
+    background: #ff6b6b;
+}
+
+/* Photo Styling */
+.photo-frame {
+    border: 8px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 15px auto;
+}
+
+.gift-container {
+    display: flex;
+    justify-content: space-around;
+    font-size: 3rem;
+    margin-top: 40px;
+}
+
+.gift {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.gift:hover {
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 80%;
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .gift-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+
+}}
