@@ -29,12 +29,11 @@ document.getElementById('lockInput').addEventListener('keydown', (e) => {
 
 // ---------- Gifts ----------
 const giftContents = [
-  { label:'A Secret', icon:'gift', title:'A Secret', text:"[Write a little secret here — something sweet only she'd know, like how you feel when she's not looking.]" },
-  { label:'A Memory', icon:'heart', title:'A Memory', text:"[Describe a favorite memory of you two — a specific day, place, or moment that stuck with you.]" },
-  { label:'A Wish', icon:'star', title:'A Wish', text:"[Share a wish you have for the two of you — for tomorrow, or for someday.]" },
-  { label:'A Promise', icon:'shield', title:'A Promise', text:"[Write a promise to her — something simple and true.]" },
-  { label:'A Thank You', icon:'sun', title:'A Thank You', text:"[Thank her for something specific she does or the way she makes you feel.]" },
-  { label:'A Dream', icon:'moon', title:'A Dream', text:"[Describe a dream you have for your future together.]" },
+  { label:'Flowers', icon:'gift', title:'Flowers', text:"[i got you flowers.]" },
+  { label:'', icon:'heart', title:'A Memory', text:"[Youll be wearing it.]" },
+  { label:'', icon:'star', title:'Duo', text:"[A photobooth session.]" },
+  { label:'', icon:'Chain', title:'visionary', text:"[A custom necklace.]" },
+  { label:'', icon:'moon', title:'Card', text:"[Custome made card]" },
 ];
 
 const iconPaths = {
@@ -76,12 +75,12 @@ function closeGiftModal(){
 
 // ---------- Reasons ----------
 const reasons = [
-  "[Reason 1 — something about how she makes you feel.]",
-  "[Reason 2 — something specific she does that you love.]",
-  "[Reason 3 — a quality of hers you admire.]",
-  "[Reason 4 — a small habit of hers that makes you smile.]",
-  "[Reason 5 — how she's changed your life for the better.]",
-  "[Reason 6 — anything else your heart wants to say.]",
+  "[Reason 1 — You just make me smile and alive even in my saddest moments.]",
+  "[Reason 2 — You are very caring and understanding.]",
+  "[Reason 3 — You are steadfast with your decisions.]",
+  "[Reason 4 — Your smile just lightens me up.]",
+  "[Reason 5 — You helped me in have a mind of belief and pursistence.]",
+  "[Reason 6 — Eres lo mejor que me ha pasado.]",
 ];
 document.getElementById('reasonsList').innerHTML = reasons.map((r,i) => `
   <div class="reason">
