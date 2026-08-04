@@ -8,12 +8,56 @@ const trackImages = [
   'usage/1000479728.jpg',
 ];
 
+const galleryItems = [
+  { type:'image', src:'usage/1000479769.jpg', alt:'Memory photo 1' },
+  { type:'image', src:'usage/1000479768.jpg', alt:'Memory photo 2' },
+  { type:'image', src:'usage/1000479765.jpg', alt:'Memory photo 3' },
+  { type:'image', src:'usage/1000479764.jpg', alt:'Memory photo 4' },
+  { type:'image', src:'usage/1000479728.jpg', alt:'Memory photo 5' },
+  { type:'image', src:'usage/1000479835.jpg', alt:'Memory photo 6' },
+  { type:'image', src:'usage/1000505145.jpg', alt:'Memory photo 7' },
+  { type:'video', src:'usage/1000451988.mp4', alt:'Memory video 1' },
+  { type:'video', src:'usage/1000451989.mp4', alt:'Memory video 2' },
+  { type:'video', src:'usage/1000451996.mp4', alt:'Memory video 3' },
+  { type:'video', src:'usage/1000478992.mp4', alt:'Memory video 4' },
+  { type:'video', src:'usage/1000480356.mp4', alt:'Memory video 5' },
+  { type:'video', src:'usage/1000586648.mp4', alt:'Memory video 6' },
+  { type:'video', src:'usage/1000586655.mp4', alt:'Memory video 7' },
+];
+
 function renderSlideTracker(){
   const scroller = document.getElementById('slideTrack');
   const images = [...trackImages, ...trackImages];
   scroller.innerHTML = images.map((src, index) =>
     `<img src="${src}" alt="slide ${index % trackImages.length + 1}" loading="lazy">`
   ).join('');
+}
+
+function renderGallery(){
+  const grid = document.getElementById('galleryGrid');
+  const sortedItems = [...galleryItems].sort((a, b) => {
+    if (a.type === b.type) return 0;
+    return a.type === 'image' ? -1 : 1;
+  });
+  grid.innerHTML = sortedItems.map((item) => {
+    if (item.type === 'image'){
+      return `
+        <button class="gallery-card" type="button" onclick="openGallery('${item.src}', 'image')">
+          <img src="${item.src}" alt="${item.alt}">
+        </button>
+      `;
+    }
+    return `
+      <button class="gallery-card" type="button" onclick="openGallery('${item.src}', 'video')">
+        <video muted autoplay loop playsinline preload="metadata" src="${item.src}"></video>
+        <div class="video-preview-overlay"><span>▶</span></div>
+      </button>
+    `;
+  }).join('');
+}
+
+function viewFullGallery(){
+  document.getElementById('gallery').scrollIntoView({ behavior:'smooth' });
 }
 
 function tryUnlock(){
@@ -32,6 +76,7 @@ function tryUnlock(){
 }
 
 renderSlideTracker();
+renderGallery();
 
 document.getElementById('lockInput').addEventListener('input', (e) => {
   let v = e.target.value.replace(/[^\d]/g, '');
@@ -90,6 +135,30 @@ function openGift(i){
 function closeGiftModal(){
   document.getElementById('giftModal').classList.remove('open');
 }
+
+function openGallery(src, type){
+  const modal = document.getElementById('galleryModal');
+  const content = document.getElementById('galleryModalContent');
+  if (type === 'image'){
+    content.innerHTML = `<img src="${src}" alt="Gallery image">`;
+  } else {
+    content.innerHTML = `<video controls autoplay muted loop playsinline>
+      <source src="${src}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>`;
+  }
+  modal.classList.add('open');
+}
+function closeGalleryModal(){
+  document.getElementById('galleryModal').classList.remove('open');
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape'){
+    closeGiftModal();
+    closeGalleryModal();
+  }
+});
 
 // ---------- Reasons ----------
 const reasons = [

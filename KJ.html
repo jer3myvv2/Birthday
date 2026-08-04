@@ -38,12 +38,24 @@
     <div class="gifts-wrap">
       <div class="eyebrow">Tap to open</div>
       <h2 class="title">Your Gifts</h2>
-      <p class="subtitle">Six little boxes, each holding a piece of my heart.</p>
+      <p class="subtitle">Five little boxes, each holding a piece of my heart.</p>
+      <button class="gallery-action" type="button" onclick="viewFullGallery()">View full gallery</button>
       <div class="gift-grid" id="giftGrid"></div>
     </div>
-    <div class="scroll-cue" onclick="document.getElementById('reasons').scrollIntoView()">
+    <div class="scroll-cue" onclick="document.getElementById('gallery').scrollIntoView()">
       Scroll down
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b7a72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY ================= -->
+  <section class="section" id="gallery">
+    <div class="gallery-wrap">
+      <div class="eyebrow">Memories</div>
+      <h2 class="title">Photos & Videos</h2>
+      <p class="subtitle">A small gallery of captured moments, ready for your photos and special clips.</p>
+      <button class="gallery-action" type="button" onclick="viewFullGallery()">View full gallery</button>
+      <div class="gallery-grid" id="galleryGrid"></div>
     </div>
   </section>
 
@@ -102,6 +114,14 @@
     <div class="modal-icon" id="modalIcon"></div>
     <div class="modal-title" id="modalTitle"></div>
     <div class="modal-text" id="modalText"></div>
+  </div>
+</div>
+
+<!-- ================= GALLERY MODAL ================= -->
+<div class="modal-backdrop" id="galleryModal" onclick="if(event.target===this) closeGalleryModal()">
+  <div class="modal gallery-modal">
+    <button class="modal-close" onclick="closeGalleryModal()">✕</button>
+    <div class="gallery-modal-content" id="galleryModalContent"></div>
   </div>
 </div>
 
