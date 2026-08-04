@@ -1,10 +1,26 @@
-const CORRECT_DATE = "08/08/08";
+const CORRECT_DATE = "17/08/08";
+
+const trackImages = [
+  'usage/1000479769.jpg',
+  'usage/1000479768.jpg',
+  'usage/1000479765.jpg',
+  'usage/1000479764.jpg',
+  'usage/1000479728.jpg',
+];
+
+function renderSlideTracker(){
+  const scroller = document.getElementById('slideTrack');
+  const images = [...trackImages, ...trackImages];
+  scroller.innerHTML = images.map((src, index) =>
+    `<img src="${src}" alt="slide ${index % trackImages.length + 1}" loading="lazy">`
+  ).join('');
+}
 
 function tryUnlock(){
   const input = document.getElementById('lockInput');
   const err = document.getElementById('lockError');
   const val = input.value.trim();
-  if (val === CORRECT_DATE || val === "8/8/08" || val === "08/08/2008" || val === "8/8/2008"){
+  if (val === CORRECT_DATE || val === "17/08/08" || val === "17/08/2008" || val === "17/08/2008"){
     document.getElementById('lock').style.display = 'none';
     const gifts = document.getElementById('gifts');
     gifts.classList.add('reveal');
@@ -14,6 +30,8 @@ function tryUnlock(){
     err.textContent = "That's not quite it — try again 💚";
   }
 }
+
+renderSlideTracker();
 
 document.getElementById('lockInput').addEventListener('input', (e) => {
   let v = e.target.value.replace(/[^\d]/g, '');
@@ -29,10 +47,10 @@ document.getElementById('lockInput').addEventListener('keydown', (e) => {
 
 // ---------- Gifts ----------
 const giftContents = [
-  { label:'Flowers', icon:'gift', title:'Flowers', text:"[i got you flowers.]" },
-  { label:'', icon:'heart', title:'A Memory', text:"[Youll be wearing it.]" },
-  { label:'', icon:'star', title:'Duo', text:"[A photobooth session.]" },
-  { label:'', icon:'Chain', title:'visionary', text:"[A custom necklace.]" },
+  { label:'', icon:'gift', title:'Flowers', text:"[i got you flowers.]" },
+  { label:'', icon:'heart', title:'Ring', text:"[Youll be wearing it.]" },
+  { label:'', icon:'star', title:'Session', text:"[A photobooth session.]" },
+  { label:'', icon:'Chain', title:'necklace', text:"[A custom necklace.]" },
   { label:'', icon:'moon', title:'Card', text:"[Custome made card]" },
 ];
 
@@ -90,7 +108,7 @@ document.getElementById('reasonsList').innerHTML = reasons.map((r,i) => `
 `).join('');
 
 // ---------- Confetti ----------
-const confettiColors = ['#1f8f74','#b8934a','#57e0b0','#faf7f0','#e07a5f'];
+const confettiColors = ['#ff93c2','#ffcade','#ffe4f0','#ffffff','#ffc0d8'];
 function celebrate(){
   const wrap = document.getElementById('confettiWrap');
   for (let i = 0; i < 60; i++){
