@@ -34,10 +34,11 @@ const galleryItems = [
   { type:'video', src:'usage/1000586648.mp4', alt:'Memory video 6' },
   { type:'video', src:'usage/1000586655.mp4', alt:'Memory video 7' },
   { type:'video', src:'usage/VID-20260807-WA0006.mp4', alt:'Memory video 8' },
-  { type:'video', src:'usage/VID-20260814-WA0028_1.mp4', alt:'Memory video 9' },
-  { type:'video', src:'usage/VID-20260814-WA0029_1.mp4', alt:'Memory video 10' },
-  { type:'video', src:'usage/VID-20260814-WA0029_2.mp4', alt:'Memory video 11' },
-  { type:'video', src:'usage/VID-20260814-WA0055.mp4', alt:'Memory video 12' },
+  { type:'video', src:'usage/VID-20260810-WA0021.mp4', alt:'Memory video 9' },
+  { type:'video', src:'usage/VID-20260814-WA0028_1.mp4', alt:'Memory video 10' },
+  { type:'video', src:'usage/VID-20260814-WA0029_1.mp4', alt:'Memory video 11' },
+  { type:'video', src:'usage/VID-20260814-WA0029_2.mp4', alt:'Memory video 12' },
+  { type:'video', src:'usage/VID-20260814-WA0055.mp4', alt:'Memory video 13' },
 ];
 
 function renderSlideTracker(){
@@ -64,7 +65,7 @@ function renderGallery(){
     }
     return `
       <button class="gallery-card" type="button" onclick="openGallery('${item.src}', 'video')">
-        <video muted autoplay loop playsinline preload="metadata" src="${item.src}"></video>
+        <video muted autoplay loop playsinline webkit-playsinline preload="metadata" src="${item.src}"></video>
         <div class="video-preview-overlay"><span>▶</span></div>
       </button>
     `;
@@ -100,6 +101,9 @@ document.getElementById('lockInput').addEventListener('input', (e) => {
   if (v.length > 4) out = v.slice(0,2) + '/' + v.slice(2,4) + '/' + v.slice(4);
   else if (v.length > 2) out = v.slice(0,2) + '/' + v.slice(2);
   e.target.value = out;
+});
+document.getElementById('lockInput').addEventListener('focus', (e) => {
+  e.target.type = 'tel';
 });
 document.getElementById('lockInput').addEventListener('keydown', (e) => {
   if (e.key === 'Enter') tryUnlock();
@@ -157,7 +161,7 @@ function openGallery(src, type){
   if (type === 'image'){
     content.innerHTML = `<img src="${src}" alt="Gallery image">`;
   } else {
-    content.innerHTML = `<video controls autoplay muted loop playsinline>
+    content.innerHTML = `<video controls autoplay muted loop playsinline webkit-playsinline>
       <source src="${src}" type="video/mp4">
       Your browser does not support the video tag.
     </video>`;
