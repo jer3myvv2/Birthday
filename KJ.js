@@ -16,6 +16,16 @@ const galleryItems = [
   { type:'image', src:'usage/1000479728.jpg', alt:'Memory photo 5' },
   { type:'image', src:'usage/1000479835.jpg', alt:'Memory photo 6' },
   { type:'image', src:'usage/1000505145.jpg', alt:'Memory photo 7' },
+  { type:'image', src:'usage/IMG-20260807-WA0025.jpg', alt:'Memory photo 8' },
+  { type:'image', src:'usage/IMG-20260814-WA0019.jpg', alt:'Memory photo 9' },
+  { type:'image', src:'usage/IMG-20260814-WA0020.jpg', alt:'Memory photo 10' },
+  { type:'image', src:'usage/IMG-20260814-WA0024.jpg', alt:'Memory photo 11' },
+  { type:'image', src:'usage/IMG-20260814-WA0046.jpg', alt:'Memory photo 12' },
+  { type:'image', src:'usage/KJ_20260731_224245_0000.png', alt:'Memory photo 13' },
+  { type:'image', src:'usage/Screenshot_20260801_222945_WhatsApp.jpg', alt:'Memory photo 14' },
+  { type:'image', src:'usage/Screenshot_20260801_222951_WhatsApp.jpg', alt:'Memory photo 15' },
+  { type:'image', src:'usage/Screenshot_20260801_222956_WhatsApp.jpg', alt:'Memory photo 16' },
+  { type:'image', src:'usage/Screenshot_20260801_223504_WhatsApp.jpg', alt:'Memory photo 17' },
   { type:'video', src:'usage/1000451988.mp4', alt:'Memory video 1' },
   { type:'video', src:'usage/1000451989.mp4', alt:'Memory video 2' },
   { type:'video', src:'usage/1000451996.mp4', alt:'Memory video 3' },
@@ -23,6 +33,11 @@ const galleryItems = [
   { type:'video', src:'usage/1000480356.mp4', alt:'Memory video 5' },
   { type:'video', src:'usage/1000586648.mp4', alt:'Memory video 6' },
   { type:'video', src:'usage/1000586655.mp4', alt:'Memory video 7' },
+  { type:'video', src:'usage/VID-20260807-WA0006.mp4', alt:'Memory video 8' },
+  { type:'video', src:'usage/VID-20260814-WA0028_1.mp4', alt:'Memory video 9' },
+  { type:'video', src:'usage/VID-20260814-WA0029_1.mp4', alt:'Memory video 10' },
+  { type:'video', src:'usage/VID-20260814-WA0029_2.mp4', alt:'Memory video 11' },
+  { type:'video', src:'usage/VID-20260814-WA0055.mp4', alt:'Memory video 12' },
 ];
 
 function renderSlideTracker(){
