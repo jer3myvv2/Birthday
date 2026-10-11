@@ -1,44 +1,30 @@
-const CORRECT_DATE = "17/08/08";
+const CORRECT_DATE = "12/10/08";
 
 const trackImages = [
-  'usage/1000479769.jpg',
-  'usage/1000479768.jpg',
-  'usage/1000479765.jpg',
-  'usage/1000479764.jpg',
-  'usage/1000479728.jpg',
+  'usage/1000648485.jpg',
+  'usage/1000648481.jpg',
+  'usage/1000646832.jpg',
+  'usage/1000642651.jpg',
+  'usage/1000642437.jpg',
 ];
 
 const galleryItems = [
-  { type:'image', src:'usage/1000479769.jpg', alt:'Memory photo 1' },
-  { type:'image', src:'usage/1000479768.jpg', alt:'Memory photo 2' },
-  { type:'image', src:'usage/1000479765.jpg', alt:'Memory photo 3' },
-  { type:'image', src:'usage/1000479764.jpg', alt:'Memory photo 4' },
-  { type:'image', src:'usage/1000479728.jpg', alt:'Memory photo 5' },
-  { type:'image', src:'usage/1000479835.jpg', alt:'Memory photo 6' },
-  { type:'image', src:'usage/1000505145.jpg', alt:'Memory photo 7' },
-  { type:'image', src:'usage/IMG-20260807-WA0025.jpg', alt:'Memory photo 8' },
-  { type:'image', src:'usage/IMG-20260814-WA0019.jpg', alt:'Memory photo 9' },
-  { type:'image', src:'usage/IMG-20260814-WA0020.jpg', alt:'Memory photo 10' },
-  { type:'image', src:'usage/IMG-20260814-WA0024.jpg', alt:'Memory photo 11' },
-  { type:'image', src:'usage/IMG-20260814-WA0046.jpg', alt:'Memory photo 12' },
-  { type:'image', src:'usage/KJ_20260731_224245_0000.png', alt:'Memory photo 13' },
-  { type:'image', src:'usage/Screenshot_20260801_222945_WhatsApp.jpg', alt:'Memory photo 14' },
-  { type:'image', src:'usage/Screenshot_20260801_222951_WhatsApp.jpg', alt:'Memory photo 15' },
-  { type:'image', src:'usage/Screenshot_20260801_222956_WhatsApp.jpg', alt:'Memory photo 16' },
-  { type:'image', src:'usage/Screenshot_20260801_223504_WhatsApp.jpg', alt:'Memory photo 17' },
-  { type:'video', src:'usage/1000451988.mp4', alt:'Memory video 1' },
-  { type:'video', src:'usage/1000451989.mp4', alt:'Memory video 2' },
-  { type:'video', src:'usage/1000451996.mp4', alt:'Memory video 3' },
-  { type:'video', src:'usage/1000478992.mp4', alt:'Memory video 4' },
-  { type:'video', src:'usage/1000480356.mp4', alt:'Memory video 5' },
-  { type:'video', src:'usage/1000586648.mp4', alt:'Memory video 6' },
-  { type:'video', src:'usage/1000586655.mp4', alt:'Memory video 7' },
-  { type:'video', src:'usage/VID-20260807-WA0006.mp4', alt:'Memory video 8' },
-  { type:'video', src:'usage/VID-20260810-WA0021.mp4', alt:'Memory video 9' },
-  { type:'video', src:'usage/VID-20260814-WA0028_1.mp4', alt:'Memory video 10' },
-  { type:'video', src:'usage/VID-20260814-WA0029_1.mp4', alt:'Memory video 11' },
-  { type:'video', src:'usage/VID-20260814-WA0029_2.mp4', alt:'Memory video 12' },
-  { type:'video', src:'usage/VID-20260814-WA0055.mp4', alt:'Memory video 13' },
+  { type:'image', src:'usage/1000632092.jpg', alt:'Memory photo 1' },
+  { type:'image', src:'usage/1000632133.jpg', alt:'Memory photo 2' },
+  { type:'image', src:'usage/1000637053.jpg', alt:'Memory photo 3' },
+  { type:'image', src:'usage/1000637057.jpg', alt:'Memory photo 4' },
+  { type:'image', src:'usage/1000637058.jpg', alt:'Memory photo 5' },
+  { type:'image', src:'usage/1000642281.jpg', alt:'Memory photo 6' },
+  { type:'image', src:'usage/1000642297.jpg', alt:'Memory photo 7' },
+  { type:'image', src:'usage/1000642423.jpg', alt:'Memory photo 8' },
+  { type:'image', src:'usage/1000642437.jpg', alt:'Memory photo 9' },
+  { type:'image', src:'usage/1000642451.jpg', alt:'Memory photo 10' },
+  { type:'image', src:'usage/1000642651.jpg', alt:'Memory photo 11' },
+  { type:'image', src:'usage/1000646832.jpg', alt:'Memory photo 12' },
+  { type:'image', src:'usage/1000648481.jpg', alt:'Memory photo 13' },
+  { type:'image', src:'usage/1000648485.jpg', alt:'Memory photo 14' },
+  { type:'image', src:'usage/1000635045.gif', alt:'Memory video 1' },
+  { type:'image', src:'usage/1000642856.gif', alt:'Memory video 2' },
 ];
 
 function renderSlideTracker(){
@@ -80,7 +66,7 @@ function tryUnlock(){
   const input = document.getElementById('lockInput');
   const err = document.getElementById('lockError');
   const val = input.value.trim();
-  if (val === CORRECT_DATE || val === "17/08/08" || val === "17/08/2008" || val === "17/08/2008"){
+  if (val === CORRECT_DATE || val === "12/10/08" || val === "12/10/2008" || val === "12/10/2008"){
     document.getElementById('lock').style.display = 'none';
     const gifts = document.getElementById('gifts');
     gifts.classList.add('reveal');
@@ -112,9 +98,7 @@ document.getElementById('lockInput').addEventListener('keydown', (e) => {
 // ---------- Gifts ----------
 const giftContents = [
   { label:'', icon:'gift', title:'Flowers', text:"[i got you flowers.]" },
-  { label:'', icon:'heart', title:'Ring', text:"[Youll be wearing it.]" },
-  { label:'', icon:'star', title:'Session', text:"[A photobooth session.]" },
-  { label:'', icon:'Chain', title:'necklace', text:"[A custom necklace.]" },
+  { label:'', icon:'sun', title:'Sunset Walk', text:"[A slow sunset walk with you.]" },
   { label:'', icon:'moon', title:'Card', text:"[Custome made card]" },
 ];
 
@@ -181,12 +165,12 @@ document.addEventListener('keydown', (e) => {
 
 // ---------- Reasons ----------
 const reasons = [
-  "[Reason 1 — You just make me smile and alive even in my saddest moments.]",
-  "[Reason 2 — You are very caring and understanding.]",
-  "[Reason 3 — You are steadfast with your decisions.]",
-  "[Reason 4 — Your smile just lightens me up.]",
-  "[Reason 5 — You helped me in have a mind of belief and pursistence.]",
-  "[Reason 6 — Eres lo mejor que me ha pasado.]",
+  "You can make me smile, even on my hardest days.",
+  "You care deeply and always try to understand the people around you.",
+  "I admire how sure of yourself you are and how you stand by your decisions.",
+  "Your smile has a way of brightening my whole day.",
+  "You inspire me to believe in myself and keep going.",
+  "Sie sind einer der besten Menschen, die ich dieses Jahr kennengelernt habe",
 ];
 document.getElementById('reasonsList').innerHTML = reasons.map((r,i) => `
   <div class="reason">
@@ -196,7 +180,7 @@ document.getElementById('reasonsList').innerHTML = reasons.map((r,i) => `
 `).join('');
 
 // ---------- Confetti ----------
-const confettiColors = ['#ff93c2','#ffcade','#ffe4f0','#ffffff','#ffc0d8'];
+const confettiColors = ['#b99cff','#d9ccff','#eee6ff','#ffffff','#a889ef'];
 function celebrate(){
   const wrap = document.getElementById('confettiWrap');
   for (let i = 0; i < 60; i++){
